@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>hello walid</title>
+        <style>
+            .inputTime{
+                width:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" class="inputTime" onkeypress="return verifSaisie(event)">
+
+        <input type="text" class="inputTime" onkeypress="return verifSaisie(event)">
+
+        <input type="text" class="inputTime" onkeypress="return verifSaisie(event)">
+
+        <input type="text" class="inputTime" onkeypress="return verifSaisie(event)">
+
+    </body>
+    <script>
+        function verifSaisie(e){
+            var inputTime = e.path[0];
+            var valueTime = inputTime.value;
+            if((e.charCode < 48 || e.charCode > 57) || valueTime.length > 4 ){
+                return false;
+            }
+            if(valueTime.length == 2){
+                e.path[0].value+=":";
+            }
+        }
+    </script>
+</html>
